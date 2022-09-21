@@ -31,10 +31,10 @@ app.post('/login',(req,res)=>{
     }
 
 
-   fetch('https://upright-guppy-78.hasura.app/api/rest/login',{
+   fetch('https://immense-elk-72.hasura.app/api/rest/login',{
         method : 'POST',
         body : JSON.stringify(user),
-        headers : {'Content-Type': 'application/json','x-hasura-admin-secret':'QWt8paaZtf80a2xU37gnOhAAFIVTXFR2Atw26ASX3Y3zImS26Gp09ypnOD7B9ajT'}
+        headers : {'Content-Type': 'application/json','x-hasura-admin-secret':'wbejJ3c4tCZIMDpzUQg9FdK93GCZUKwmHE328GpOGSsm8Q9MpG5jTTRj3Fo8B7HE'}
     }).then(res => Promise.all([res.status, res.text()]))
     .then(([status, textData]) => {
         if(textData.includes("[]" || status1==400)){
