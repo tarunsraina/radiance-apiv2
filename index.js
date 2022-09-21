@@ -39,6 +39,8 @@ app.post('/login',(req,res)=>{
     .then(([status, textData]) => {
         if(textData.includes("[]" || status1==400)){
             res.status(401).send("No user found")
+        }else if(textData.includes("FATAL") || textData.includes("failed")){
+            res.status(500).send("Internal server error");
         }else{
         const accessToken = generateAccessToken(user)
         const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN)
